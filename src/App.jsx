@@ -1,12 +1,14 @@
-import news_feed from './sample_news_stories.json';
+import { STORIES } from './data';
+import Story from './components/Story';
 
 function App() {
 
-  // Get stories from news feed
-  const stories = news_feed.results;
+  const storyList = STORIES.map(story => <Story key={story.title} story={story} />);
 
   return (
-    <div className="App">
+    <div className='storySection'>
+      <h1>AR in UX News Feed</h1>
+      {storyList}
     </div>
   );
 }
